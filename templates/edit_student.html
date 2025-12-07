@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit Student — {{ student.name }}</h1>
+<form method="post">
+    <label>Name*</label>
+    <input name="name" value="{{ student.name }}" required />
+
+    <label>Email*</label>
+    <input name="email" type="email" value="{{ student.email }}" required />
+
+    <label>Course</label>
+    <input name="course" value="{{ student.course }}" />
+
+    <label>Age</label>
+    <input name="age" type="number" min="1" value="{{ student.age or '' }}" />
+
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
